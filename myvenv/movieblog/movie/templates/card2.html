@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'movie/style.css' %}">
+
+<div class="col-md-2 mb-2">
+    <div class="card h-100">
+        <img class="card-img-top" src="{{ movie.resim.url }}" alt="{{ movie.isim }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ movie.isim }}</h5>
+            <a href="{% url 'movie_detail' movie.id %}" class="btn btn-primary">Detayları Gör</a>
+            <p class="card-text">{{ movie.tür }}</p>
+            <p class="card-text">Yapım Yılı: {{ movie.yıl }}</p>
+        </div>
+    </div>
+</div>

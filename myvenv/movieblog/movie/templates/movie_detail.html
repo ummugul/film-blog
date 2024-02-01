@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+<body>
+    <div class="container mb-2 col-md-6">
+        <h1>{{ movie.isim }} </h1>
+        <div class="card">
+            
+            <div class="card-body">
+                <p class="card-text">{{ movie.aciklama }}</p>
+                <p class="card-text">{{ movie.tür }}</p>
+                <p class="card-text">Yapım Yılı: {{ movie.yıl }}</p>
+                <img class="card-img" src="{{ movie.resim.url }}" alt="{{ movie.isim }}">
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

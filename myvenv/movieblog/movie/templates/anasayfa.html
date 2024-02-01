@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'movie/hero.html' %}
+
+    <div class="container mt-4">
+        <h1>En Fresh içeriklerle Modunu Yakala</h1>
+
+        {% block homepage_content %}
+            <section class="latest-films-container  text-white p-4">
+                <div class="blink-box">
+                    <h2 class="mb-4">En Yeniler</h2>
+                    <div class="row">
+                        {% for movie in latest_movies %}
+                            {% include 'card2.html' with movie=movie %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+    </div>
+{% endblock %}

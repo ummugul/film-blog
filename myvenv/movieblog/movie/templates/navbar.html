@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'anasayfa' %}">Anasayfa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="{% url 'movie_list' %}">Filmler <span class="sr-only"></span></a>
+          </li>
+          {% if request.path == '/moduna_gore/' %}
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="modunaGoreDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Moduna Göre
+              </a>
+          <div class="dropdown-menu" aria-labelledby="modunaGoreDropdown">
+            <a class="dropdown-item" href="#asiga">Aşığa</a>
+            <a class="dropdown-item" href="#aglamak">Ağlamak İsteyene</a>
+            <a class="dropdown-item" href="#bilim">Bilim Kurgucuya</a>
+            <a class="dropdown-item" href="#cay">Çaya Çorbaya</a>
+            <a class="dropdown-item" href="#gerilim">Gerilim Göbek Adım</a>
+            <a class="dropdown-item" href="#iyi">İyi Saatte olsunlar</a>
+            <a class="dropdown-item" href="#vurdulu">Vurdulu Kırdılı</a>
+                     
+          </div>
+          
+        </li>
+          {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">İletişim</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hosgeldin! {{user.username|title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}  
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registration' %}">Regisration</a>
+          </li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  
+  </nav>
+

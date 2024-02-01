@@ -1,0 +1,12 @@
+
+.hero {
+    background-image: url('/static/movie/images/hero.jpg');  
+    background-size: cover;
+    background-position: center;
+    height: 500px;  
+    color: #5c0707;  
+    text-align: center;
+    display: inside;
+    flex-direction: column;
+    justify-content: center;
+}

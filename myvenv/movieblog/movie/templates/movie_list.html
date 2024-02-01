@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+
+    <div class="container mt-4">
+        <h1>Tüm İçerikleri Gezip İstediğini Seç</h1>
+        <h1 class="mb-4"></h1>
+        <div class="row">
+            {% for movie in Movies %}
+                {% include 'card.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+{% endblock %}
+</html>

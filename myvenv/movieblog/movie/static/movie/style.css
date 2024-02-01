@@ -1,0 +1,25 @@
+.blink-box {
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        border: 2px solid rgb(210, 6, 6);
+        padding: 10px;
+    }
+    to {
+        border: 2px solid rgb(191, 15, 15); 
+        padding: 20px;
+    }
+}
+
+.latest-films-container {
+    background-color: rgb(151, 14, 14); 
+    border-radius: 10px; 
+    padding: 20px; 
+}
+
+
+.card {
+    height: 100%; 
+}

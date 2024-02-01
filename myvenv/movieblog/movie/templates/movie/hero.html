@@ -1,0 +1,62 @@
+<head>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .hero {
+        position: relative;
+        height: 500px; 
+        background-image: url('{% static "movie/images/hero.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-end; 
+        color: #e30b0b; 
+        margin: 0;
+        padding: 0;
+        }
+
+        .hero .hero-text {
+            text-align: center;
+            color: rgb(239, 148, 36);
+            background-color: rgba(10, 10, 10, 0.5); 
+            padding: 20px;
+            max-width: 500px; 
+            margin-bottom: 0px; 
+            border-radius: 10px; 
+        }
+
+        .hero .hero-text h1 {
+            margin: 0;
+        }
+
+        .custom-btn {
+            background-color: #711302; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px; 
+        }
+
+        .custom-btn:hover {
+            background-color: #8e0a0a; 
+        }
+
+    </style>
+</head>
+
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Bugün Filmin Benden Arkana Yaslan ve İzle</h1>
+        <a href="{% url 'moduna_gore' %}" class="custom-btn">Modunu Yakala</a>
+    </div>
+</div>

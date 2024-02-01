@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <section class="category-container" id="asiga">
+        <h2>Aşığa</h2>
+        <div class="row">
+            {% for movie in romantik_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="aglamak">
+        <h2>Ağlamak İsteyene</h2>
+        <div class="row">
+            {% for movie in dram_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="bilim">
+        <h2>Bilim Kurgucuya</h2>
+        <div class="row">
+            {% for movie in bilim_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="cay">
+        <h2>Çaya Çorbaya</h2>
+        <div class="row">
+            {% for movie in komedi_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="gerilim">
+        <h2>Gerilim Göbek Adım</h2>
+        <div class="row">
+            {% for movie in gerilim_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="iyi">
+        <h2>İyi Saatte Olsunlar</h2>
+        <div class="row">
+            {% for movie in korku_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-container" id="vurdulu">
+        <h2>Vurdulu Kırdılı</h2>
+        <div class="row">
+            {% for movie in aksiyon_movies %}
+                {% include 'card2.html' with movie=movie %}
+            {% endfor %}
+        </div>
+    </section>
+    
+    <script>
+        $(document).ready(function () {
+            // Smooth scrolling for internal links
+            $('a.nav-link').on('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = $('#' + targetId);
+                const currentPage = window.location.pathname;
+    
+                if (currentPage.includes('moduna_gore')) {
+                    // If on the "Moduna Göre" page
+                    if (targetElement.length > 0) {
+                        // If the target section exists, scroll to it
+                        $('html, body').animate({
+                            scrollTop: targetElement.offset().top - $('.navbar').outerHeight()
+                        }, 'slow');
+                        e.preventDefault(); // Prevent default behavior only for internal links
+                    } else {
+                        // If the target section doesn't exist, navigate to the specified page
+                        window.location.href = this.getAttribute('href');
+                    }
+                }
+            });
+        });
+    </script>  
+
+</body>
+
+{% endblock %}
